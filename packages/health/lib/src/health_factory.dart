@@ -24,8 +24,10 @@ class HealthFactory {
 
   HealthFactory({bool useHealthConnectIfAvailable = false}) {
     _useHealthConnectIfAvailable = useHealthConnectIfAvailable;
-    if (_useHealthConnectIfAvailable)
+    if (_useHealthConnectIfAvailable) {
       _channel.invokeMethod('useHealthConnectIfAvailable');
+    }else {
+       _channel.invokeMethod('noUseHealthConnectIfAvailable');
   }
 
   /// Check if a given data type is available on the platform
